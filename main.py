@@ -1,1 +1,0 @@
-print('\nWelcome to Pokédex\n')
