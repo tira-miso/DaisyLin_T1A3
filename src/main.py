@@ -1,8 +1,26 @@
+import os, csv
 from pokemonlist import pokemon_listr
 from search import search_method
 from randompokemon import random_pokemon
 
-# pokemon_listr()
+def open_pokemon_csv():
+
+    pokemon_masterlist = "pokemonOG.csv"
+    pokemon_csv_path = os.path.join(os.path.dirname(__file__), pokemon_masterlist)
+
+    try: 
+        csv_file = open(pokemon_csv_path, 'r')
+        return csv_file
+        
+    except FileNotFoundError:
+        print("File not found:", pokemon_csv_path)
+        return None
+
+with open_pokemon_csv() as csv_file:   
+    data = list(csv.reader(csv_file, delimiter=","))
+    tbl_data = data[1:]
+    headers = data[0]
+
 
 def terminal_menu():
     print('\nWelcome to Pokédex, we help you find your Pokémon.\n')
@@ -10,11 +28,11 @@ def terminal_menu():
        'Enter [1] to display all Pokémons.\nEnter [2] to search Pokémons.\nEnter [3] to get a random Pokémon.\nEnter [4] to add a Pokémon.\nEnter [5] to display search history.\n\n')
 
     if int(user_input) == 1:
-        pokemon_listr()
+        pokemon_listr(data)
     elif int(user_input) == 2:
-        search_method()
+        search_method(tbl_data, headers)
     elif int(user_input) == 3:
-        random_pokemon()
+        random_pokemon(data)
 
 
 def select_option():

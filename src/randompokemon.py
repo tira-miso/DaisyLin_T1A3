@@ -1,9 +1,8 @@
-import csv
 import random
-from csv_module import open_pokemon_csv
+from tabulate import tabulate 
 
-def random_pokemon():
-  with open_pokemon_csv() as csvfile:
-    reader = csv.reader(csvfile)
-    chosen_row = random.choice(list(reader))
-    print(chosen_row)
+def random_pokemon(data):
+    chosen_row = random.choice(data)
+    print(tabulate(chosen_row), headers="firstrow", tablefmt="fancy_grid")
+
+

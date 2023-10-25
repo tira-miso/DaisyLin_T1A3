@@ -1,11 +1,7 @@
-import csv
-from csv_module import open_pokemon_csv
+from tabulate import tabulate 
 
-def pokemon_listr(): 
+def pokemon_listr(data): 
 
-    with open_pokemon_csv() as csv_file:
-        pokemon_csv_file = csv.DictReader(csv_file)
-
-        for line in pokemon_csv_file:
-            print(line['Number'], line['Name'])
+    id_name_list = [row[0:3] for row in data]
+    print(tabulate(id_name_list, headers="firstrow", tablefmt="fancy_grid"))
 
