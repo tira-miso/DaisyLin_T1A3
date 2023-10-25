@@ -32,7 +32,7 @@ def terminal_menu():
     elif int(user_input) == 2:
         search_method(tbl_data, headers)
     elif int(user_input) == 3:
-        random_pokemon(data)
+        random_pokemon(tbl_data, headers)
 
 
 def select_option():

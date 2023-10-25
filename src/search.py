@@ -43,9 +43,10 @@ def search_num(data, fullheaders):
 def search_type(data, fullheaders):
     type = input('Enter a Pokémon type, \nBug, Dragon, Electric, Fighting, Fire, Flying, Ghost, Grass, Ground, Ice, Normal, Poison, Psychic, Rock, or Water: \n')
 
-    col = [x[2] for x in data]
-    if type in col:
-        index = col.index(type)        
+    # col = [x[2] for x in data]
+    # if type in col:
+    #     index = col.index(type)      
+    
        
         print(tabulate([data[index]], headers= fullheaders, tablefmt="fancy_grid"))
 
