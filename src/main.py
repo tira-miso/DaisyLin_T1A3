@@ -34,17 +34,23 @@ def terminal_menu():
     elif int(user_input) == 3:
         random_pokemon(tbl_data, headers)
 
+    select_option()
 
 def select_option():
     user_input = input(
         '\nEnter [1] to go back to main menu.\nEnter [2] to finish the program.\n')
 
-    if int(user_input) == 1:
-        terminal_menu()
- 
-    else:
+    if int(user_input) == 2:
+
         print('Thanks for using Pokédex. We hope to see you again.\n')
+        global running
+        running = False
+        
 
+if __name__ == "__main__":
 
-terminal_menu()
-select_option()
+    running = True
+    
+    while running:
+        terminal_menu()
+        
