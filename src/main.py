@@ -10,13 +10,24 @@ def close_pokedex():
 
 def terminal_menu():
     print('Welcome to Pokédex, we help you find your Pokémon.')
-    user_input = input(cg.menu)                 
+    user_input = input(cg.menu)
+    c = 0                 
 
     while user_input not in ['1', '2', '3', '4', '5']:
-        user_input = input(cg.error_message + '\n')
+        if c % 5 == 0 and c != 0:
+            user_input = input(cg.error_message + cg.menu)
+        else:
+            user_input = input(cg.error_message + '\n')
+        c += 1
+
     user_input = int(user_input)
+
     if user_input == 1:
-        print(tabulate(cm.data, headers="firstrow", tablefmt="fancy_grid"))
+        print('Original 151 Pokémon:')
+        print(tabulate(cm.data, headers='firstrow', tablefmt='fancy_grid' ))
+        if len(cm.user_created) > 1:
+            print('User Added Pokémon:')
+            print(tabulate(cm.user_created, headers='firstrow', tablefmt='fancy_grid'))
         select_option()
     elif user_input == 2:
         main_search_loop()

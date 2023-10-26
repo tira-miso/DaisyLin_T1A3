@@ -14,12 +14,6 @@ def open_pokemon_csv(operation):
     except FileNotFoundError:
         print("File not found:", pokemon_csv_path)
         return None
-    
-# f = open('path/to/csv_file', 'w')
-
-# # create the csv writer
-# writer = csv.writer(csv_file:)
-# writer.writerows(data)
 
 with open_pokemon_csv('r') as csv_file:
    data = list(csv.reader(csv_file, delimiter=","))
