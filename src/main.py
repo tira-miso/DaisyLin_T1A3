@@ -1,25 +1,8 @@
-import os, csv
+import csv_module
 from search import search_method
 from randompokemon import random_pokemon
 from tabulate import tabulate
 
-def open_pokemon_csv():
-
-    pokemon_masterlist = "pokemonOG.csv"
-    pokemon_csv_path = os.path.join(os.path.dirname(__file__), pokemon_masterlist)
-
-    try: 
-        csv_file = open(pokemon_csv_path, 'r')
-        return csv_file
-        
-    except FileNotFoundError:
-        print("File not found:", pokemon_csv_path)
-        return None
-
-with open_pokemon_csv() as csv_file:   
-    data = list(csv.reader(csv_file, delimiter=","))
-    tbl_data = data[1:]
-    headers = data[0]
 
 
 def terminal_menu():
