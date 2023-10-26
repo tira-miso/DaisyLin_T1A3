@@ -1,6 +1,7 @@
 # DaisyLin_T1A3 
 
 [GitHub Repository](https://github.com/tira-miso/DaisyLin_T1A3)
+
 [Link to my Trello board](https://trello.com/b/BHR6aIn7/t1a3-pokedex)
 
 ## Style Guide
@@ -15,7 +16,7 @@ This application in Python follows the [PEP8](https://peps.python.org/pep-0008/)
 
 I also used [autopep8](https://pypi.org/project/autopep8/) to achieve the consistent style guidelines.
 
-## Features
+## Purpose and Key Features
 
 This terminal application is created to provide a user-friendly way for you to search, view, and learn the various information about Pokémon species. 
 It includes:

@@ -1,7 +1,7 @@
 import os, csv
-from pokemonlist import pokemon_listr
 from search import search_method
 from randompokemon import random_pokemon
+from tabulate import tabulate
 
 def open_pokemon_csv():
 
@@ -23,12 +23,18 @@ with open_pokemon_csv() as csv_file:
 
 
 def terminal_menu():
-    print('\nWelcome to Pokédex, we help you find your Pokémon.\n')
-    user_input = input(
-       'Enter [1] to display all Pokémons.\nEnter [2] to search Pokémons.\nEnter [3] to get a random Pokémon.\nEnter [4] to add a Pokémon.\nEnter [5] to display search history.\n\n')
+    user_input = input("""
+Welcome to Pokédex, we help you find your Pokémon.
+                       
+Enter [1] to display all Pokémons.
+Enter [2] to search Pokémons.
+Enter [3] to get a random Pokémon.
+Enter [4] to add a Pokémon.
+Enter [5] to display search history.\n
+""")
 
     if int(user_input) == 1:
-        pokemon_listr(data)
+        print(tabulate(data, headers="firstrow", tablefmt="fancy_grid"))
     elif int(user_input) == 2:
         search_method(tbl_data, headers)
     elif int(user_input) == 3:
