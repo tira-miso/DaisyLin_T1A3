@@ -1,4 +1,4 @@
-import csv_module
+import csv_module as cm
 from search import search_method
 from randompokemon import random_pokemon
 from tabulate import tabulate
@@ -17,11 +17,11 @@ Enter [5] to display search history.\n
 """)
 
     if int(user_input) == 1:
-        print(tabulate(data, headers="firstrow", tablefmt="fancy_grid"))
+        print(tabulate(cm.data, headers="firstrow", tablefmt="fancy_grid"))
     elif int(user_input) == 2:
-        search_method(tbl_data, headers)
+        search_method()
     elif int(user_input) == 3:
-        random_pokemon(tbl_data, headers)
+        random_pokemon()
 
     select_option()
 

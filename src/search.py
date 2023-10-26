@@ -1,3 +1,4 @@
+import csv_module as cm
 from tabulate import tabulate
 from ast import literal_eval
 
@@ -8,7 +9,7 @@ def get_type(input_data):
     except (ValueError, SyntaxError):
         return str
 
-def search_method(data, fullheaders):
+def search_method():
     
     search_again_text = 'Do you want to search again? [Y]/[N]: '
     running = True
@@ -18,7 +19,7 @@ def search_method(data, fullheaders):
         user_input = input('Enter a Pokémon name or ID number to search: ')
         input_type = get_type(user_input)
 
-        if search_pokemon(user_input, input_type, data, fullheaders):
+        if search_pokemon(user_input, input_type):
             user_question = input(search_again_text)
             while user_question.upper() not in ["Y", "N"]:
                 user_question = input('Please enter "Y" or "N".\n')
@@ -28,7 +29,7 @@ def search_method(data, fullheaders):
             print("Pokemon doesn't exist.")
 
 
-def search_pokemon(id, type, data, fullheaders):
+def search_pokemon(id, type):
 
     if type == str:
         col = 1
@@ -36,11 +37,11 @@ def search_pokemon(id, type, data, fullheaders):
     else:
         col = 0
 
-    column = [x[col].lower() for x in data]
+    column = [x[col].lower() for x in cm.data]
 
     if id in column:
         i = column.index(id)
 
-        print(tabulate([data[i]], headers=fullheaders, tablefmt="fancy_grid"))
+        print(tabulate([cm.data[i]], headers=cm.headers, tablefmt="fancy_grid"))
         return True
     
