@@ -1,6 +1,7 @@
 import os
 import csv
 
+
 def open_pokemon_csv(operation):
 
     pokemon_masterlist = "pokemonOG.csv"
@@ -15,8 +16,9 @@ def open_pokemon_csv(operation):
         print("File not found:", pokemon_csv_path)
         return None
 
+
 with open_pokemon_csv('r') as csv_file:
-   data = list(csv.reader(csv_file, delimiter=","))
+    data = list(csv.reader(csv_file, delimiter=","))
 
 
 headers = data[0]

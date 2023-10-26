@@ -1,4 +1,4 @@
-#Added error message to avoid repetitve code
+# Added error message to avoid repetitve code
 menu = ("""
                   
 Enter [1] to display all Pokémon.
@@ -10,10 +10,11 @@ Enter [5] to Close Pokédex.
 
 """)
 error_message = 'Please enter a valid reply.'
-#Declared variable in config module to avoid global requirement used in previous main.py
+func_unavaible = 'This function is currently under development.'
+# Declared variable in config module to avoid global requirement used in previous main.py
 main_run = True
-#empty list stored in config so search history can be retained when moving between funcs
+# empty list stored in config so search history can be retained when moving between funcs
 search_history = []
 
-#Installed packages:
-#pip install tabulate
+# Installed packages:
+# pip install tabulate

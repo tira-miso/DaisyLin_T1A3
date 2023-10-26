@@ -29,7 +29,7 @@ After your search, the terminal will display the chosen Pokémon along with a li
 ### Feature 3: Surprise me! (Random Pokémon)
 The Random Pokémon function selects a random Pokémon from our database and presents it for you to discover. 
 It's a great way to encounter Pokémon you might not be familiar with.
-### Feature 4: Add new Pokémon to our database
+### Feature 4: Add new Pokémon ot our database
 This feature allows user to expand our existing database by inputting Pokémon details for future reference.
 ### Feature 5: Searching history 
 This function keeps a record of your five most recent searches for your convenience.
@@ -40,7 +40,16 @@ I used Trello to plan and execute this project. For each feature, I created a ch
 Additional details and modifications were incorporated as the project progressed.
 
 Trello board screenshots:
-
+<img src="docs/Trello1.png">
+<img src="docs/Trello2.png">
+<img src="docs/Trello3.png">
+<img src="docs/Trello4.png">
+<img src="docs/Trello5.png">
+<img src="docs/Checklist1.png">
+<img src="docs/Checklist2.png">
+<img src="docs/Checklist3.png">
+<img src="docs/Checklist4.png">
+<img src="docs/Checklist5.png">
 
 ## Help Documentation
 
@@ -51,8 +60,7 @@ Python 3.3 and later versions come with the virtual environment 'venv' built-in,
 
 ### Dependencies:
 - pytest (7.4.3)
-- 
-
+- tabulate 
 
 ### Steps to install the application:
 
