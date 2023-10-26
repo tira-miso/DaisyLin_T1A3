@@ -19,19 +19,21 @@ def main_search_loop():
         
         history_switch = input("[1] Search Pokemon \n[2] View Search History \n[3] Return to Main Menu \n")
 
-        if int(history_switch) not in [1, 2, 3]:
+        if history_switch not in ['1','2','3']:
             cg.Error_message
-            
-        elif int(history_switch) == 1:
+
+        history_switch = int(history_switch)
+
+        if history_switch  == 1:
             inner_search_loop()
 
-        elif int(history_switch) == 2:
+        elif history_switch  == 2:
             if len(history) < 1:
                 print('No search history! Please search some pokemon first.')
             else:
                 print(tabulate(history,headers= ["Searches:","Results - ID:", "Result - Name:"], tablefmt="fancy_grid"))
 
-        elif int(history_switch) == 3:
+        elif history_switch == 3:
             running = False
 
 def inner_search_loop():

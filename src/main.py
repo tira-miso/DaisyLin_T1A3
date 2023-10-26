@@ -9,39 +9,31 @@ def close_pokedex():
     cg.main_run = False
 
 def terminal_menu():
-    user_input = input("""
-Welcome to Pokédex, we help you find your Pokémon.
-                       
-Enter [1] to display all Pokémon.
-Enter [2] to search Pokémon.
-Enter [3] to get a random Pokémon.  
-Enter [4] to add your own Pokémon.
-                       
-Enter [5] to Close Pokédex.                      
+    print('Welcome to Pokédex, we help you find your Pokémon.')
+    user_input = input(cg.menu)                 
 
-""")
-
-    if int(user_input) == 1:
+    while user_input not in ['1', '2', '3', '4', '5']:
+        user_input = input(cg.error_message + '\n')
+    user_input = int(user_input)
+    if user_input == 1:
         print(tabulate(cm.data, headers="firstrow", tablefmt="fancy_grid"))
         select_option()
-    elif int(user_input) == 2:
+    elif user_input == 2:
         main_search_loop()
-    elif int(user_input) == 3:
+    elif user_input == 3:
         random_pokemon()
         select_option()
-    elif int(user_input) == 5:
+    elif user_input == 5:
         close_pokedex()
-    else: 
-        print(cg.error_message)
-
     
 def select_option():
     selection = input('\nEnter [1] to go back to main menu.\nEnter [2] to finish the program.\n')
-    if selection not in [1, 2]:
-        print(cg.error_message)
-    elif int(selection) == 1:
+    while selection not in ['1', '2']:
+        selection = input(cg.error_message + '\n')
+    selection = int(selection)
+    if  selection == 1:
         terminal_menu()
-    elif int(selection) == 2:
+    elif selection == 2:
         close_pokedex()
         
 
